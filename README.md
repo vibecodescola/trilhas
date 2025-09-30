@@ -2,7 +2,7 @@
 
 ## 📱 Descrição
 
-Transformação da webapp "Trilhas Digitais de Aprendizagem" em um Progressive Web App (PWA) mobile otimizado, mantendo todas as funcionalidades originais e adicionando melhorias específicas para dispositivos móveis.
+O webapp "Trilhas Digitais de Aprendizagem" é agora um Progressive Web App (PWA) mobile otimizado, mantendo todas as funcionalidades originais e adicionando melhorias específicas para dispositivos móveis.
 
 ## ✨ Funcionalidades Principais
 

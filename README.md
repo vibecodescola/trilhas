@@ -147,4 +147,4 @@ Para problemas ou sugestões relacionadas ao app mobile, consulte a documentaç�
 ---
 
 **Desenvolvido com ❤️ para educação**  
-*Escola Januário E. de Lima - 2025*
+*Professor Sérgio Araújo - Escola Januário E. de Lima - 2025*

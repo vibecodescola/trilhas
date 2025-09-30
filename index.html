@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trilhas Digitais - Mobile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            padding-bottom: 80px;
+            background: linear-gradient(135deg, #191970 0%, #4B0082 100%);
+        }
+        .mobile-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .bottom-nav {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .nav-item {
+            transition: all 0.3s ease;
+        }
+        .nav-item.active {
+            color: #191970;
+            transform: translateY(-2px);
+        }
+        .hero-section {
+            background: linear-gradient(135deg, rgba(25, 25, 112, 0.9) 0%, rgba(75, 0, 130, 0.9) 100%);
+        }
+        .grade-button {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #191970 0%, #4B0082 100%);
+        }
+        .grade-button:active {
+            transform: scale(0.95);
+        }
+        .activity-card {
+            transition: all 0.3s ease;
+        }
+        .activity-card:active {
+            transform: scale(0.98);
+        }
+        .floating-chat {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header -->
+    <header class="hero-section text-white p-4 shadow-lg">
+        <div class="flex items-center mb-3">
+            <i class="fas fa-book-open text-2xl mr-3"></i>
+            <div>
+                <h1 class="text-lg font-bold">Trilhas Digitais</h1>
+                <p class="text-xs opacity-90">História & LPT</p>
+            </div>
+        </div>
+        <div class="bg-white bg-opacity-20 rounded-lg p-3">
+            <p class="text-sm font-medium">Escola Januário E. de Lima</p>
+            <p class="text-xs opacity-75">Prof. Sérgio Araújo 2025</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="p-4 space-y-6">
+        <!-- Home Section -->
+        <section id="home-section" class="space-y-6">
+            <!-- Welcome Card -->
+            <div class="mobile-card rounded-xl p-5 shadow-lg">
+                <h2 class="text-xl font-bold text-gray-800 mb-3">Bem-vindos! 🌱</h2>
+                <p class="text-gray-600 text-sm mb-4">
+                    Selecione sua série para acessar as trilhas de aprendizagem em História e Literatura.
+                </p>
+                
+                <!-- Grade Selection -->
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="showSection('6ano')" class="grade-button text-white rounded-xl p-4 text-center shadow-lg">
+                        <i class="fas fa-star text-xl mb-2"></i>
+                        <h3 class="font-bold text-sm">6º Ano</h3>
+                        <p class="text-xs opacity-90">Mundos antigos</p>
+                    </button>
+                    <button onclick="showSection('7ano')" class="grade-button text-white rounded-xl p-4 text-center shadow-lg">
+                        <i class="fas fa-star text-xl mb-2"></i>
+                        <i class="fas fa-star text-xl mb-2"></i>
+                        <h3 class="font-bold text-sm">7º Ano</h3>
+                        <p class="text-xs opacity-90">Medieval e moderno</p>
+                    </button>
+                    <button onclick="showSection('8ano')" class="grade-button text-white rounded-xl p-4 text-center shadow-lg">
+                        <i class="fas fa-star text-xl mb-2"></i>
+                        <i class="fas fa-star text-xl mb-2"></i>
+                        <i class="fas fa-star text-xl mb-2"></i>
+                        <h3 class="font-bold text-sm">8º Ano</h3>
+                        <p class="text-xs opacity-90">Moderno e contemporâneo</p>
+                    </button>
+                    <button onclick="showSection('9ano')" class="grade-button text-white rounded-xl p-4 text-center shadow-lg">
+                        <i class="fas fa-star text-xl mb-2"></i>
+                        <i class="fas fa-star text-xl mb-2"></i>
+                        <i class="fas fa-star text-xl mb-2"></i>
+                        <i class="fas fa-star text-xl mb-2"></i>
+                        <h3 class="font-bold text-sm">9º Ano</h3>
+                        <p class="text-xs opacity-90">Mundo Contemporâneo</p>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="mobile-card rounded-xl p-5 shadow-lg">
+                <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-link text-blue-600 mr-2"></i>
+                    Links Rápidos
+                </h3>
+                <div class="space-y-3">
+                    <a href="https://zonaeducacional.github.io/badges/" target="_blank" class="flex items-center p-3 bg-yellow-50 rounded-lg border border-yellow-200">
+                        <i class="fas fa-trophy text-yellow-600 mr-3"></i>
+                        <div>
+                            <p class="font-medium text-sm text-gray-800">Mural das Conquistas</p>
+                            <p class="text-xs text-gray-600">Veja suas medalhas</p>
+                        </div>
+                    </a>
+                    <a href="https://web2.nekoweb.org/novastrilhas/horariosdeaulas" target="_blank" class="flex items-center p-3 bg-green-50 rounded-lg border border-green-200">
+                        <i class="fas fa-calendar-alt text-green-600 mr-3"></i>
+                        <div>
+                            <p class="font-medium text-sm text-gray-800">Horário de Aulas</p>
+                            <p class="text-xs text-gray-600">Confira seus horários</p>
+                        </div>
+                    </a>
+                    <a href="https://web2.nekoweb.org/novastrilhas/cal.html" target="_blank" class="flex items-center p-3 bg-purple-50 rounded-lg border border-purple-200">
+                        <i class="fas fa-calendar text-purple-600 mr-3"></i>
+                        <div>
+                            <p class="font-medium text-sm text-gray-800">Calendário</p>
+                            <p class="text-xs text-gray-600">Datas importantes</p>
+                        </div>
+                    </a>
+                    <a href="https://zonaeducacional.github.io/radio/" target="_blank" class="flex items-center p-3 bg-red-50 rounded-lg border border-red-200">
+                        <i class="fas fa-radio text-red-600 mr-3"></i>
+                        <div>
+                            <p class="font-medium text-sm text-gray-800">Rádio Educa</p>
+                            <p class="text-xs text-gray-600">Ouça nossa rádio</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6º Ano Section -->
+        <section id="6ano-section" class="hidden space-y-4">
+            <div class="mobile-card rounded-xl p-4 shadow-lg">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-bold text-blue-800">6º Ano</h2>
+                    <button onclick="showSection('home')" class="text-blue-600 p-2">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+                
+                <!-- História -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold text-blue-800 mb-3 flex items-center">
+                        <i class="fas fa-landmark mr-2"></i>
+                        História
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="activity-card bg-white rounded-lg p-4 shadow-sm border border-blue-200">
+                            <div class="flex items-start">
+                                <img src="https://web2.nekoweb.org/novastrilhas/10-amazing-facts-about-human-evolution-1.jpg" alt="Grécia" class="w-16 h-16 rounded mr-3 object-cover">
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-blue-800 text-sm">Grécia Antiga</h4>
+                                    <p class="text-gray-600 text-xs mt-1">Desvendando as Grandes Civilizações</p>
+                                    <a href="https://web2.nekoweb.org/novastrilhas/III_Unidade/grecia" target="_blank" class="inline-block mt-2 bg-yellow-600 text-white px-3 py-1 rounded text-xs">
+                                        Acessar
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-card bg-white rounded-lg p-4 shadow-sm border border-blue-200">
+                            <div class="flex items-start">
+                                <img src="https://web2.nekoweb.org/novastrilhas/10-amazing-facts-about-human-evolution-1.jpg" alt="Game" class="w-16 h-16 rounded mr-3 object-cover">
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-blue-800 text-sm">Game: Odisseia Digital</h4>
+                                    <p class="text-gray-600 text-xs mt-1">Aventura pela Grécia Antiga</p>
+                                    <a href="https://web2.nekoweb.org/novastrilhas/III_Unidade/" target="_blank" class="inline-block mt-2 bg-yellow-600 text-white px-3 py-1 rounded text-xs">
+                                        Jogar
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="activity-card bg-white rounded-lg p-4 shadow-sm border border-blue-200">
+                            <div class="flex items-start">
+                                <img src="https://web2.nekoweb.org/novastrilhas/10-amazing-facts-about-human-evolution-1.jpg" alt="Roma" class="w-16 h-16 rounded mr-3 object-cover">
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-blue-800 text-sm">Jornada pela Roma Antiga</h4>
+                                    <p class="text-gray-600 text-xs mt-1">Explorando a civilização romana</p>
+                                    <a href="https://web2.nekoweb.org/novastrilhas/III_Unidade/cursoroma" target="_blank" class="inline-block mt-2 bg-yellow-600 text-white px-3 py-1 rounded text-xs">
+                                        Explorar
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LPT -->
+                <div>
+                    <h3 class="text-lg font-bold text-purple-800 mb-3 flex items-center">
+                        <i class="fas fa-feather-alt mr-2"></i>
+                        Literatura
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="activity-card bg-white rounded-lg p-4 shadow-sm border border-purple-200">
+                            <div class="flex items-start">
+                                <img src="https://web2.nekoweb.org/RPGCIV/literatura.png" alt="Festival" class="w-16 h-16 rounded mr-3 object-cover">
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-purple-800 text-sm">Festival de Música</h4>
+                                    <p class="text-gray-600 text-xs mt-1">Poesia e letras de músicas</p>
+                                    <a href="https://sergiodeplus.github.io/projetomusica/" target="_blank" class="inline-block mt-2 bg-yellow-600 text-white px-3 py-1 rounded text-xs">
+                                        Participar
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7º Ano Section -->
+        <section id="7ano-section" class="hidden space-y-4">
+            <div class="mobile-card rounded-xl p-4 shadow-lg">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-bold text-green-800">7º Ano</h2>
+                    <button onclick="showSection('home')" class="text-green-600 p-2">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+                
+                <!-- História -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold text-green-800 mb-3 flex items-center">
+                        <i class="fas fa-landmark mr-2"></i>
+                        História
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="activity-card bg-white rounded-lg p-4 shadow-sm border border-green-200">
+                            <div class="flex items-start">
+                                <img src="https://web2.nekoweb.org/novastrilhas/O%20Guardi%C3%83%C2%83o%20das%20Hist%C3%83%C2%83%C3%82%C2%B3rias_Mali%2C%201324.jpg" alt="HQ" class="w-16 h-16 rounded mr-3 object-cover">
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-green-800 text-sm">HQ - O Guardião das Histórias</h4>
+                                    <p class="text-gray-600 text-xs mt-1">As aventuras de um Griot</p>
+                                    <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRh9FHmlg95nVGBko7PORIzeVPqJ2UVyGfuU_U4ccWb-LFKFnwj_qnwGH3jpvRVyat8vM_GKqA-Gjlf/pubhtml" target="_blank" class="inline-block mt-2 bg-yellow-600 text-white px-3 py-1 rounded text-xs">
+                                        Resultados
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-card bg-white rounded-lg p-4 shadow-sm border border-green-200">
+                            <div class="flex items-start">
+                                <img src="https://web2.nekoweb.org/RPGCIV/renascenca.png" alt="Renascimento" class="w-16 h-16 rounded mr-3 object-cover">
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-green-800 text-sm">Reforma Religiosa</h4>
+                                    <p class="text-gray-600 text-xs mt-1">A Europa e América</p>
+                                    <a href="https://web2.nekoweb.org/novastrilhas/III_Unidade/reforma" target="_blank" class="inline-block mt-2 bg-yellow-600 text-white px-3 py-1 rounded text-xs">
+                                        Aventurar
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LPT -->
+                <div>
+                    <h3 class="text-lg font-bold text-purple-800 mb-3 flex items-center">
+                        <i class="fas fa-feather-alt mr-2"></i>
+                        Literatura
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="activity-card bg-white rounded-lg p-4 shadow-sm border border-purple-200">
+                            <div class="flex items-start">
+                                <img src="https://web2.nekoweb.org/RPGCIV/literatura.png" alt="Festival" class="w-16 h-16 rounded mr-3 object-cover">
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-purple-800 text-sm">Festival de Música</h4>
+                                    <p class="text-gray-600 text-xs mt-1">Trovadores e Podcast</p>
+                                    <div class="flex gap-2 mt-2">
+                                        <a href="https://sergiodeplus.github.io/projetomusica/" target="_blank" class="bg-yellow-600 text-white px-2 py-1 rounded text-xs">
+                                            Trovadores
+                                        </a>
+                                        <a href="https://zonaeducacional.github.io/podcast/" target="_blank" class="bg-yellow-600 text-white px-2 py-1 rounded text-xs">
+                                            Podcast
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8º Ano Section -->
+        <section id="8ano-section" class="hidden space-y-4">
+            <div class="mobile-card rounded-xl p-4 shadow-lg">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-bold text-purple-800">8º Ano</h2>
+                    <button onclick="showSection('home')" class="text-purple-600 p-2">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+                
+                <!-- História -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold text-purple-800 mb-3 flex items-center">
+                        <i class="fas fa-landmark mr-2"></i>
+                        História
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="activity-card bg-white rounded-lg p-4 shadow-sm border border-purple-200">
+                            <div class="flex items-start">
+                                <img src="https://web2.nekoweb.org/RPGCIV/revind.png" alt="Brasil Império" class="w-16 h-16 rounded mr-3 object-cover">
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-purple-800 text-sm">Brasil Império e República</h4>
+                                    <p class="text-gray-600 text-xs mt-1">Política, Economia, Sociedade</p>
+                                    <a href="https://zonaeducacional.github.io/8ano3unid/" target="_blank" class="inline-block mt-2 bg-yellow-600 text-white px-3 py-1 rounded text-xs">
+                                        Jogar
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LPT -->
+                <div>
+                    <h3 class="text-lg font-bold text-purple-800 mb-3 flex items-center">
+                        <i class="fas fa-feather-alt mr-2"></i>
+                        Literatura
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="activity-card bg-white rounded-lg p-4 shadow-sm border border-purple-200">
+                            <div class="flex items-start">
+                                <img src="https://web2.nekoweb.org/RPGCIV/literatura.png" alt="Festival" class="w-16 h-16 rounded mr-3 object-cover">
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-purple-800 text-sm">Festival Interclasses</h4>
+                                    <p class="text-gray-600 text-xs mt-1">Trovadores e Podcast</p>
+                                    <div class="flex gap-2 mt-2">
+                                        <a href="https://sergiodeplus.github.io/projetomusica/" target="_blank" class="bg-yellow-600 text-white px-2 py-1 rounded text-xs">
+                                            Trovadores
+                                        </a>
+                                        <a href="https://zonaeducacional.github.io/podcast/" target="_blank" class="bg-yellow-600 text-white px-2 py-1 rounded text-xs">
+                                            Podcast
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9º Ano Section -->
+        <section id="9ano-section" class="hidden space-y-4">
+            <div class="mobile-card rounded-xl p-4 shadow-lg">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-bold text-red-800">9º Ano</h2>
+                    <button onclick="showSection('home')" class="text-red-600 p-2">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+                
+                <!-- História -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold text-red-800 mb-3 flex items-center">
+                        <i class="fas fa-landmark mr-2"></i>
+                        História
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="activity-card bg-white rounded-lg p-4 shadow-sm border border-red-200">
+                            <div class="flex items-start">
+                                <img src="https://web2.nekoweb.org/RPGCIV/seculoxx.png" alt="Século XX" class="w-16 h-16 rounded mr-3 object-cover">
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-red-800 text-sm">Ditadura Civil-Militar</h4>
+                                    <p class="text-gray-600 text-xs mt-1">1964 - 1985</p>
+                                    <div class="flex gap-2 mt-2">
+                                        <a href="https://escolai.nekoweb.org/app9ano/index.html" target="_blank" class="bg-red-600 text-white px-2 py-1 rounded text-xs">
+                                            Portal
+                                        </a>
+                                        <a href="https://vibecodescola.github.io/rpgditadura/" target="_blank" class="bg-yellow-600 text-white px-2 py-1 rounded text-xs">
+                                            RPG 1964
+                                        </a>
+                                        <a href="https://zonaeducacional.github.io/1983/" target="_blank" class="bg-yellow-600 text-white px-2 py-1 rounded text-xs">
+                                            1983
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-card bg-white rounded-lg p-4 shadow-sm border border-red-200">
+                            <div class="flex items-start">
+                                <img src="https://web2.nekoweb.org/novastrilhas/Captura%20de%20tela%20de%202025-04-08%2020-59-57.png" alt="Era Vargas" class="w-16 h-16 rounded mr-3 object-cover">
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-red-800 text-sm">Revolução e Era Vargas</h4>
+                                    <p class="text-gray-600 text-xs mt-1">Resultados do Debate</p>
+                                    <div class="flex gap-2 mt-2">
+                                        <a href="https://web2.nekoweb.org/novastrilhas/resultado_debate.html" target="_blank" class="bg-yellow-600 text-white px-2 py-1 rounded text-xs">
+                                            Debate
+                                        </a>
+                                        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSgEEVuwOXspG0IAVsufOE6sN_wmGJHA6CA9k_43PeZvcaFJTLJXH61X4qbjFZkKMOlNX0zCqbBZba/pubhtml" target="_blank" class="bg-yellow-600 text-white px-2 py-1 rounded text-xs">
+                                            Resultados
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LPT -->
+                <div>
+                    <h3 class="text-lg font-bold text-purple-800 mb-3 flex items-center">
+                        <i class="fas fa-feather-alt mr-2"></i>
+                        Literatura
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="activity-card bg-white rounded-lg p-4 shadow-sm border border-purple-200">
+                            <div class="flex items-start">
+                                <img src="https://web2.nekoweb.org/RPGCIV/literatura.png" alt="Festival" class="w-16 h-16 rounded mr-3 object-cover">
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-purple-800 text-sm">Festival Interclasses</h4>
+                                    <p class="text-gray-600 text-xs mt-1">Trovadores e Podcast</p>
+                                    <div class="flex gap-2 mt-2">
+                                        <a href="https://sergiodeplus.github.io/projetomusica/" target="_blank" class="bg-yellow-600 text-white px-2 py-1 rounded text-xs">
+                                            Trovadores
+                                        </a>
+                                        <a href="https://zonaeducacional.github.io/podcast/" target="_blank" class="bg-yellow-600 text-white px-2 py-1 rounded text-xs">
+                                            Podcast
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating Chat Button -->
+    <div class="floating-chat">
+        <button class="bg-yellow-600 text-white p-4 rounded-full shadow-lg">
+            <i class="fas fa-comments text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav fixed bottom-0 left-0 right-0 p-3">
+        <div class="flex justify-around items-center">
+            <button onclick="showSection('home')" class="nav-item active flex flex-col items-center text-xs">
+                <i class="fas fa-home text-lg mb-1"></i>
+                <span>Início</span>
+            </button>
+            <a href="https://zonaeducacional.github.io/badges/" target="_blank" class="nav-item flex flex-col items-center text-xs text-gray-600">
+                <i class="fas fa-trophy text-lg mb-1"></i>
+                <span>Conquistas</span>
+            </a>
+            <a href="https://web2.nekoweb.org/novastrilhas/horariosdeaulas" target="_blank" class="nav-item flex flex-col items-center text-xs text-gray-600">
+                <i class="fas fa-calendar-alt text-lg mb-1"></i>
+                <span>Horários</span>
+            </a>
+            <a href="https://zonaeducacional.github.io/radio/" target="_blank" class="nav-item flex flex-col items-center text-xs text-gray-600">
+                <i class="fas fa-radio text-lg mb-1"></i>
+                <span>Rádio</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Botpress Chat -->
+    <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/01/24/19/20250124193117-N6IX45Y9.js" defer></script>
+
+    <script>
+        // Navigation function
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = ['home', '6ano', '7ano', '8ano', '9ano'];
+            sections.forEach(section => {
+                const element = document.getElementById(section + '-section');
+                if (element) {
+                    element.classList.add('hidden');
+                }
+            });
+            
+            // Show selected section
+            const targetSection = document.getElementById(sectionId + '-section');
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+            }
+            
+            // Update navigation active state
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('home');
+            
+            // Add touch feedback for buttons
+            const buttons = document.querySelectorAll('button, .activity-card');
+            buttons.forEach(button => {
+                button.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                
+                button.addEventListener('touchend', function() {
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
